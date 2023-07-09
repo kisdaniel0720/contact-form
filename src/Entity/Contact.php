@@ -18,6 +18,7 @@ class Contact
 
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank(message: false)]
+    #[Assert\NoSuspiciousCharacters]
     private ?string $name = null;
 
     #[ORM\Column(length: 255)]
