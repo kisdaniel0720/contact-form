@@ -42,7 +42,7 @@ class Contact
 
     public function setName(string $name): static
     {
-        $this->name = $name;
+        $this->name = strip_tags($name);
 
         return $this;
     }
@@ -54,7 +54,7 @@ class Contact
 
     public function setEmail(string $email): static
     {
-        $this->email = $email;
+        $this->email = strip_tags($email);
 
         return $this;
     }
@@ -66,7 +66,7 @@ class Contact
 
     public function setMessage(string $message): static
     {
-        $this->message = $message;
+        $this->message = strip_tags($message);
 
         return $this;
     }
