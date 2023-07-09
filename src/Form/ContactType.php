@@ -17,18 +17,15 @@ class ContactType extends AbstractType
         $builder
             ->add('name', TextType::class, [
                 'label' => 'Neved',
-                'required' => false
+                'required' => false,
             ])
             ->add('email', TextType::class, [
                 'label' => 'E-mail címed',
-                'required' => false
+                'required' => false,
             ])
             ->add('message', TextareaType::class, [
                 'label' => 'Üzenet szövege',
                 'required' => false,
-                'attr' => [
-                    "rows" => 5,
-                ]
             ])
             ->add('save', SubmitType::class, [
                 'label' => 'Küldés'

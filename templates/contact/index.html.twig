@@ -11,30 +11,32 @@
     <div class="row py-5 g-3">
 
         <div class="col-md-6 first_col ">
-            <h1 class="text-center mt-3">Kapcsolat</h1>
+            <h1 class="text-center">Kapcsolat</h1>
            {{ form_start(form, {'method': 'POST'}) }}
-
-                {# Successful sending #}
-                {% for success in app.flashes('success') %}
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <strong><i class="bi bi-check-circle-fill"></i></strong> {{ success }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                {% endfor %}
-
-                {# Incorrect form filling #}
-                {% set formErrors = form.vars.errors.form.getErrors(true) %}
-                {% if formErrors|length %}
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <strong><i class="bi bi-exclamation-circle-fill"></i></strong>Hiba! Kérjük töltsd ki az összes mezőt!
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                {% endif %}
 
            {{ form_end(form) }}
 
-        </div>
+            {# Successful sending #}
+            {% for success in app.flashes('success') %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ success }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
 
+            {# Incorrect form filling #}
+            {% set formErrors = form.vars.errors.form.getErrors(true) %}
+            {% if formErrors|length %}
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong><i class="bi bi-exclamation-circle-fill me-2"></i></strong>Hiba! Kérjük töltsd ki az összes mezőt!
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endif %}
+
+        </div>
+        <div class="col-md-6 sec_col">
+            <img src="{{ asset('build/images/background.jpg') }}" alt="Kapcsolat" class="img-fluid">
+        </div>
     </div>
 </div>
 {% endblock %}

@@ -1,0 +1,83 @@
+body{
+  background-color: #f8f9fa ;
+  padding-bottom: 150px;
+
+  .first_col {
+    background-color: white;
+    min-height: 450px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position: relative;
+    width: 550px;
+    left: 155px;
+    top: 171px;
+    border-radius: 20px;
+    padding: 25px;
+
+    h1 {
+      padding: 10px 0;
+      font-family: 'Courier New', monospace;
+    }
+
+    form {
+      label {
+        font-weight: normal;
+        letter-spacing: 1px;
+      }
+
+      textarea {
+        height: 150px;
+        resize: none;
+
+        &:focus {
+          border: 2px solid #555;
+        }
+      }
+
+      .btn-primary {
+        background-color: #c1b688;
+        border: #c1b688;
+        padding: 5px 20px !important;
+        margin-top: 20px;
+        letter-spacing: 1.4px;
+
+        &:hover {
+          background-color: black !important;
+        }
+      }
+    }
+
+    .alert {
+      margin: 30px 0 0 !important;
+    }
+  }
+
+  .img-fluid {
+    border-radius: 20px;
+  }
+
+  .form-control {
+    height: 52px;
+    background: #fff;
+    font-size: 14px;
+    border-radius: 2px;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #c1b688;
+
+    &[type=text]:focus {
+      border: 2px solid #555;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .first_col {
+      position: initial;
+      left: 0 !important;
+    }
+
+    .sec_col {
+      order: 1 !important;
+    }
+  }
+}
+
